@@ -9,3 +9,9 @@ enrollment-dao/target/classes/META-INF/maven/com.citibank.enroll.customers/enrol
 *.properties
 *.jar
 *.lst
+cardverifyservice-client/.classpath
+*.prefs
+*.component
+cardverifyservice-client/.settings/org.eclipse.wst.common.project.facet.core.xml
+cardverifyservice-client/.project
+cardverifyservice-client/target/classes/META-INF/maven/com.citibank.enroll.customers/cardverifyservice-client/pom.xml
