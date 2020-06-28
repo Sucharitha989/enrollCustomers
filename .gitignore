@@ -22,3 +22,5 @@ enrollservice-resourcelayer/.classpath
 enrollservice-resourcelayer/.project
 enrollservice-resourcelayer/.settings/org.eclipse.wst.common.project.facet.core.xml
 enrollservice-resourcelayer/target/classes/META-INF/maven/com.citibank.enroll.customers/enrollservice-resourcelayer/pom.xml
+enrollment-servicewar/.project
+enrollment-servicewar/.settings/.jsdtscope

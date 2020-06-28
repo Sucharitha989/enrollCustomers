@@ -1,6 +1,7 @@
 package com.citibank.enroll.customers.resource;
 
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -33,7 +34,7 @@ public class EnrollmentResource {
 @Consumes("application/json") //this is request presentation--convert json to java object
 @Produces("application/json") //this is request presentation--convert java to json object
 @POST
-	public EnrollmentResourceRes enroll(EnrollmentResourceReq request){
+	public EnrollmentResourceRes enroll(EnrollmentResourceReq request) throws IOException{
 		System.out.println("Entered into the resource Layer : "+ request );
 		
 		EnrollmentResourceRes response = null;
@@ -115,7 +116,7 @@ public class EnrollmentResource {
 		System.out.println("Exit from Resource Layer : "+ request);
 		return response;
 }
-public static void main (String[] args){
+public static void main (String[] args) throws IOException{
 	EnrollmentResourceReq request = new EnrollmentResourceReq();
 
   // prepare the client details
