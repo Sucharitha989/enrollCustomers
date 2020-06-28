@@ -29,3 +29,9 @@ enrollment-servicewar/.settings/org.eclipse.wst.common.project.facet.core.prefs.
 enrollment-servicewar/.settings/org.eclipse.wst.common.project.facet.core.xml
 enrollment-servicewar/.settings/org.eclipse.wst.jsdt.ui.superType.container
 enrollment-servicewar/.settings/org.eclipse.wst.jsdt.ui.superType.name
+customer-enrollment-web/.classpath
+customer-enrollment-web/.project
+customer-enrollment-web/.settings/.jsdtscope
+customer-enrollment-web/.settings/org.eclipse.wst.common.project.facet.core.xml
+customer-enrollment-web/.settings/org.eclipse.wst.jsdt.ui.superType.container
+customer-enrollment-web/.settings/org.eclipse.wst.jsdt.ui.superType.name
