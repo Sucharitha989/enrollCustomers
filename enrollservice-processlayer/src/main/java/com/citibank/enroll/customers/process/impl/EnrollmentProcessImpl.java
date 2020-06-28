@@ -1,5 +1,7 @@
 package com.citibank.enroll.customers.process.impl;
 
+import java.io.IOException;
+
 import com.citibank.cardverify.service.client.CardVerifyServiceClient;
 import com.citibank.cardverify.service.client.impl.CardVerifyServiceClientImpl;
 import com.citibank.cardverify.service.client.model.CardVerifyServiceClientReq;
@@ -18,7 +20,7 @@ import com.citibank.enroll.customers.process.model.EnrollmentProcessRes;
 
 public class EnrollmentProcessImpl implements EnrollmentProcess{
 
-	public EnrollmentProcessRes enroll(EnrollmentProcessReq processReq) throws BusinessException, SystemException  {
+	public EnrollmentProcessRes enroll(EnrollmentProcessReq processReq) throws BusinessException, SystemException, IOException  {
 		
 		//1
 		//2

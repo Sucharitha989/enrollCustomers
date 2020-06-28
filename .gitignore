@@ -18,3 +18,7 @@ cardverifyservice-client/target/classes/META-INF/maven/com.citibank.enroll.custo
 enrollservice-processlayer/.classpath
 enrollservice-processlayer/.project
 enrollservice-processlayer/.settings/org.eclipse.wst.common.project.facet.core.xml
+enrollservice-resourcelayer/.classpath
+enrollservice-resourcelayer/.project
+enrollservice-resourcelayer/.settings/org.eclipse.wst.common.project.facet.core.xml
+enrollservice-resourcelayer/target/classes/META-INF/maven/com.citibank.enroll.customers/enrollservice-resourcelayer/pom.xml
