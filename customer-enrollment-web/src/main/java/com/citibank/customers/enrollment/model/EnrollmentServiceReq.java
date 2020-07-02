@@ -1,12 +1,13 @@
 package com.citibank.customers.enrollment.model;
 
+
+
 public class EnrollmentServiceReq {
 
 	
 	public ClientContext clientContext;
 	public CustomerInfo customerInfo;
 	public ServiceDetails serviceDetails;
-	
 	
 	public ClientContext getClientContext() {
 		return clientContext;
@@ -26,6 +27,7 @@ public class EnrollmentServiceReq {
 	public void setServiceDetails(ServiceDetails serviceDetails) {
 		this.serviceDetails = serviceDetails;
 	}
+	
 	
 	
 

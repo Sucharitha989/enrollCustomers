@@ -29,6 +29,39 @@ import com.citibank.enroll.customers.validator.EnrollmentReqValidator;
 @Path("/v1")
 public class EnrollmentResource {
 
+	
+	
+	
+
+/*
+{
+  "clientContext" : {
+    "clientId" : "citi",
+    "channelId" : "mobile",
+    "requestId" : "c3b930fd-7c73-4206-88d7-5c6fa489210f",
+    "messageTimeStamp" : null
+  },
+  "customerInfo" : {
+    "mobileNumber" : [ "98776555443", "87665544434" ],
+    "cardNum" : "2323434343434343434343",
+    "cvvNum" : "123",
+    "expDate" : "12-2021",
+    "nameOnCard" : "sreenu"
+  },
+  "servicedtls" : {
+    "serviceName" : "EnrollmentService",
+    "apiName" : "enrollment",
+    "version" : "1.0"
+  }
+}
+	
+*/	
+	
+	
+	
+	
+	
+	
  
 @Path("/enrollment")
 @Consumes("application/json") //this is request presentation--convert json to java object

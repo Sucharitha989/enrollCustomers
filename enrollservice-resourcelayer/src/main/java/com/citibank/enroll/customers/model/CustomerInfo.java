@@ -2,6 +2,7 @@ package com.citibank.enroll.customers.model;
 
 import java.util.List;
 
+
 public class CustomerInfo {
 
 	private String cardNum;

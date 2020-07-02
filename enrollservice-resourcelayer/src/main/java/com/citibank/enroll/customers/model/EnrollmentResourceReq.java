@@ -2,7 +2,7 @@
 
 import javax.xml.bind.annotation.XmlRootElement;
 
- @XmlRootElement
+@XmlRootElement
 public class EnrollmentResourceReq {
 
 	
@@ -11,14 +11,14 @@ public class EnrollmentResourceReq {
 	public ServiceDetails serviceDetails;
 	
 	
+	
+	
+	
+	
 	public ClientContext getClientContext() {
 		return clientContext;
 	}
-	@Override
-	public String toString() {
-		return "EnrollmentResourceReq [clientContext=" + clientContext + ", customerInfo=" + customerInfo
-				+ ", serviceDetails=" + serviceDetails + "]";
-	}
+	
 	public void setClientContext(ClientContext clientContext) {
 		this.clientContext = clientContext;
 	}
@@ -35,6 +35,10 @@ public class EnrollmentResourceReq {
 		this.serviceDetails = serviceDetails;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "EnrollmentResourceReq [clientContext=" + clientContext + ", customerInfo=" + customerInfo
+				+ ", serviceDetails=" + serviceDetails + "]";
+	}
 
 }

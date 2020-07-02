@@ -11,7 +11,7 @@ import com.citibank.enroll.customers.dao.model.EnrollmentDAOReq;
 import com.citibank.enroll.customers.dao.model.EnrollmentDAORes;
 
 public class EnrollmentDAOImpl implements EnrollmentDAO {
-	public EnrollmentDAORes enroll(EnrollmentDAOReq daoReq) throws BusinessException, SystemException, IOException {
+	public EnrollmentDAORes enroll(EnrollmentDAOReq daoReq) throws BusinessException,SystemException {
 
 		
 		
@@ -21,33 +21,35 @@ public class EnrollmentDAOImpl implements EnrollmentDAO {
 		EnrollmentDAORes daoResp = null;
 		try {
 			
-			String env = System.getProperty("env");
-
-			System.out.println("environment is : "+env);
-
-			String filename = "properties\\enroll-service-"+env+"-db"+".properties";
-			
-			System.out.println("fileName is: "+filename);
-			
-
-			InputStream input = getClass().getClassLoader().getResourceAsStream(filename);
-
-			Properties properties = new Properties();
-
-			properties.load(input);
-			
-			String dbUrl = properties.getProperty("db-url");
-			
-			System.out.println("db url : "+dbUrl);
-			
-			String username = properties.getProperty("username");
-			
-			System.out.println("username : "+username);
-			
-			String password = properties.getProperty("password");
-			
-			System.out.println("password : "+password);
-			
+			/*
+			 * String env = System.getProperty("env");
+			 * 
+			 * System.out.println("environment is : "+env);
+			 * 
+			 * String filename = "properties\\enroll-service-"+env+"-db"+".properties";
+			 * 
+			 * System.out.println("fileName is: "+filename);
+			 * 
+			 * 
+			 * InputStream input =
+			 * getClass().getClassLoader().getResourceAsStream(filename);
+			 * 
+			 * Properties properties = new Properties();
+			 * 
+			 * properties.load(input);
+			 * 
+			 * String dbUrl = properties.getProperty("db-url");
+			 * 
+			 * System.out.println("db url : "+dbUrl);
+			 * 
+			 * String username = properties.getProperty("username");
+			 * 
+			 * System.out.println("username : "+username);
+			 * 
+			 * String password = properties.getProperty("password");
+			 * 
+			 * System.out.println("password : "+password);
+			 */
 			
 			// 2.prepare the db req(sql or plsql)
 			// 3.call db by passing db req and get the db response resultset.
@@ -59,6 +61,7 @@ public class EnrollmentDAOImpl implements EnrollmentDAO {
 			// 4.prepare the dao response.
 
 			daoResp = new EnrollmentDAORes();
+			
 			if ("0".equals(respCode)) {
 
 				/* EnrollmentDAORes daoResp = new EnrollmentDAORes(); */
@@ -71,15 +74,17 @@ public class EnrollmentDAOImpl implements EnrollmentDAO {
 			} else if ("100".equals(respCode) || "101".equals(respCode) || "102".equals(respCode)
 					|| "103".equals(respCode)) {
 				throw new BusinessException(respCode, respMsg);
-			} else {
+			}
+			else {
 
 				throw new SystemException(respCode, respMsg);
 			}
-		} catch (BusinessException e) {
-			// TODO : logging details
-			e.printStackTrace();
-			throw e;
-		} catch (SystemException e) {
+		} 
+			  catch (BusinessException e) {
+				  e.printStackTrace();
+			  throw e; 
+			  }
+			  catch (SystemException e) {
 			// TODO : logging details
 			e.printStackTrace();
 			throw e;

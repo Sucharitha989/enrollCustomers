@@ -1,14 +1,11 @@
 package com.citibank.enroll.customers.model;
 
+
 public class ServiceDetails {
 private String serviceName;
 private String apiName;
 private String version;
 
-@Override
-public String toString() {
-	return "ServiceDetails [serviceName=" + serviceName + ", apiName=" + apiName + ", version=" + version + "]";
-}
 public String getServiceName() {
 	return serviceName;
 }
@@ -27,7 +24,9 @@ public String getVersion() {
 public void setVersion(String version) {
 	this.version = version;
 }
-
-
+@Override
+public String toString() {
+	return "ServiceDetails [serviceName=" + serviceName + ", apiName=" + apiName + ", version=" + version + "]";
+}
 
 }

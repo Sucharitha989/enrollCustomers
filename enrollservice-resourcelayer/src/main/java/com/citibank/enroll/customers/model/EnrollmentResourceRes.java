@@ -1,5 +1,7 @@
 package com.citibank.enroll.customers.model;
 
+
+
 import com.citibank.enroll.customers.resource.StatusBlock;
 
 public class EnrollmentResourceRes {
