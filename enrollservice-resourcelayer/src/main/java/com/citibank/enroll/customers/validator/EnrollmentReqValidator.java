@@ -19,9 +19,15 @@ public class EnrollmentReqValidator {
 		ClientContext clientContext = request.getClientContext();
 		if(clientContext.getClientId()==null || " ".equals(clientContext.getClientId())){
 			
-			throw new EnrollmentReqInvalidException("enr001","clientId is invalid");
+			throw new EnrollmentReqInvalidException("enr002","clientId is invalid");
 		}
-		//TODO: Need to write the validations for all the required elements 
-	}
+		
 
+	if(clientContext.getChannelId()==null || " ".equals(clientContext.getChannelId())){
+		
+		throw new EnrollmentReqInvalidException("enr003","channelId is invalid");
+	}
+	//TODO: Need to write the validations for all the required elements
+	
+}
 }

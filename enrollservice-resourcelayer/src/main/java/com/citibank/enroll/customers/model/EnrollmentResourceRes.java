@@ -1,12 +1,13 @@
 package com.citibank.enroll.customers.model;
 
-import com.citibank.enroll.customers.resource.StatusBlock;
+import javax.xml.bind.annotation.XmlRootElement;
 
+@XmlRootElement
 public class EnrollmentResourceRes {
 
-	public StatusBlock Status;
-	public String ackno;
-	public EnrollmentResourceReq EnrollmentDetails;
+	private StatusBlock Status;
+	private String ackno;
+	private EnrollmentResourceReq EnrollmentDetails;
 
 	public StatusBlock getStatus() {
 		return Status;
@@ -30,6 +31,12 @@ public class EnrollmentResourceRes {
 
 	public void setEnrollmentDetails(EnrollmentResourceReq enrollmentDetails) {
 		EnrollmentDetails = enrollmentDetails;
+	}
+
+	@Override
+	public String toString() {
+		return "EnrollmentResourceRes [Status=" + Status + ", ackno=" + ackno + ", EnrollmentDetails="
+				+ EnrollmentDetails + "]";
 	}
 
 }

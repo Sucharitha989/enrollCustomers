@@ -44,6 +44,11 @@ public String getCardNum() {
 public void setCardNum(String cardNum) {
 	this.cardNum = cardNum;
 }
+@Override
+public String toString() {
+	return "CardVerifyServiceClientReq [clientId=" + clientId + ", channelId=" + channelId + ", cvvNum=" + cvvNum
+			+ ", expDate=" + expDate + ", nameOnCard=" + nameOnCard + ", cardNum=" + cardNum + "]";
+}
 	
 
 	

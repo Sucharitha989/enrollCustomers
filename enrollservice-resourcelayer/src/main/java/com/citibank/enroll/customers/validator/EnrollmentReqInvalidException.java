@@ -1,11 +1,13 @@
 package com.citibank.enroll.customers.validator;
 
 public class EnrollmentReqInvalidException extends Exception {
-	private String respCode;
-	private String respMsg;
+	private final String respCode;
+	private final String respMsg;
 	
 
-	public EnrollmentReqInvalidException(String respCode, String respMsg) {
+	public EnrollmentReqInvalidException(final String respCode, final String respMsg) {
+		this.respCode = respCode;
+		this.respMsg = respMsg;
 		
 	}
 
@@ -14,19 +16,9 @@ public class EnrollmentReqInvalidException extends Exception {
 		return respCode;
 	}
 
-
-	public void setRespCode(String respCode) {
-		this.respCode = respCode;
-	}
-
-
 	public String getRespMsg() {
 		return respMsg;
 	}
 
-
-	public void setRespMsg(String respMsg) {
-		this.respMsg = respMsg;
-	}
 
 }

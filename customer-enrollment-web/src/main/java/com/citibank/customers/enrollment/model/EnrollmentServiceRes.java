@@ -30,5 +30,10 @@ public class EnrollmentServiceRes {
 		EnrollmentDetails = enrollmentDetails;
 	}
 
+	@Override
+	public String toString() {
+		return "EnrollmentServiceRes [Status=" + Status + ", ackno=" + ackno + ", EnrollmentDetails="
+				+ EnrollmentDetails + "]";
+	}
+
 }
-	

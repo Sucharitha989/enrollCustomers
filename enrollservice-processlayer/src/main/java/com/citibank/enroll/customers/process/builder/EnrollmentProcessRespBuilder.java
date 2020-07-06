@@ -12,4 +12,9 @@ public class EnrollmentProcessRespBuilder {
 		this.respMessage = respMessage;
 	}
 
+	@Override
+	public String toString() {
+		return "EnrollmentProcessRespBuilder [respMessage=" + respMessage + "]";
+	}
+
 }

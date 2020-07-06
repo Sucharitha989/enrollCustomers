@@ -2,16 +2,16 @@ package com.citibank.enroll.customers.builder;
 
 import com.citibank.enroll.customers.model.EnrollmentResourceReq;
 import com.citibank.enroll.customers.model.EnrollmentResourceRes;
+import com.citibank.enroll.customers.model.StatusBlock;
 import com.citibank.enroll.customers.process.model.EnrollmentProcessRes;
-import com.citibank.enroll.customers.resource.StatusBlock;
 
 public class EnrollmentResourceRespBuilder {
 
-	public EnrollmentResourceRes buildResourceResp(EnrollmentProcessRes processResp, EnrollmentResourceReq request) {
+	public EnrollmentResourceRes buildResourceResp(final EnrollmentProcessRes processResp, final EnrollmentResourceReq request) {
 
-		EnrollmentResourceRes response = new EnrollmentResourceRes();
+		final EnrollmentResourceRes response = new EnrollmentResourceRes();
 
-		StatusBlock status = new StatusBlock();
+		final StatusBlock status = new StatusBlock();
 		status.setRespCode(processResp.getRespCode());
 		status.setRespMsg(processResp.getRespMsg());
 		status.setStatus(processResp.getStatus());
