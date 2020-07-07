@@ -11,6 +11,7 @@ public class CardVerifyServiceClientImpl implements CardVerifyServiceClient {
 		System.out.println("Entered into card service : "+ clientReq);
 		
 			CardVerifyServiceClientRes clientResp = new CardVerifyServiceClientRes();
+			
 			clientResp.setActive(true);
 			clientResp.setRespCode("0");
 			clientResp.setRespMsg("success");

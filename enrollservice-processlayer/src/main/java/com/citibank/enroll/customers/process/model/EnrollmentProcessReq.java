@@ -5,6 +5,12 @@ import java.util.List;
 public class EnrollmentProcessReq {
 
 	private String clientId;
+	private String channelId;
+	private String cardNum;
+	private String cvvNum;
+	private String expDate;
+	private String nameOnCard;
+	private List<String> MobileNumber;
 	public String getClientId() {
 		return clientId;
 	}
@@ -41,16 +47,19 @@ public class EnrollmentProcessReq {
 	public void setNameOnCard(String nameOnCard) {
 		this.nameOnCard = nameOnCard;
 	}
-	private String channelId;
-	private String cardNum;
-	private String cvvNum;
-	private String expDate;
-	private String nameOnCard;
-	public void setMobileNumber(List<String> mobileNumber) {
-		// TODO Auto-generated method stub
-		
+	public List<String> getMobileNumber() {
+		return MobileNumber;
 	}
-	
+	public void setMobileNumber(List<String> mobileNumber) {
+		MobileNumber = mobileNumber;
+	}
+	@Override
+	public String toString() {
+		return "EnrollmentProcessReq [clientId=" + clientId + ", channelId=" + channelId + ", cardNum=" + cardNum
+				+ ", cvvNum=" + cvvNum + ", expDate=" + expDate + ", nameOnCard=" + nameOnCard + ", MobileNumber="
+				+ MobileNumber + "]";
+	}
+			
 	
 	}
 

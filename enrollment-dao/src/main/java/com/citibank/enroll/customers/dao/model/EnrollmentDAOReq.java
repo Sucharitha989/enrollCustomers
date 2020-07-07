@@ -57,4 +57,10 @@ public class EnrollmentDAOReq {
 		this.nameOnCard = nameOnCard;
 	}
 
+	@Override
+	public String toString() {
+		return "EnrollmentDAOReq [clientId=" + clientId + ", channelId=" + channelId + ", cardNum=" + cardNum
+				+ ", cvvNum=" + cvvNum + ", expDate=" + expDate + ", nameOnCard=" + nameOnCard + "]";
+	}
+
 }

@@ -1,3 +1,4 @@
+
 package com.citibank.enroll.customers.process.impl;
 
 import java.io.IOException;
@@ -22,20 +23,21 @@ public class EnrollmentProcessImpl implements EnrollmentProcess{
 
 	public EnrollmentProcessRes enroll(EnrollmentProcessReq processReq) throws BusinessException, SystemException, IOException  {
 		
+		System.out.println("Entered into the process layer: "+processReq);
 		//1
 		//2
 		
 		CardVerifyServiceClientReq clientReq =new CardVerifyServiceClientReq();
 		clientReq.setClientId(processReq.getClientId());
 		clientReq.setChannelId(processReq.getChannelId());
-		clientReq.setCvvNum(processReq.getCardNum());
+		clientReq.setCardNum(processReq.getCardNum());
 		clientReq.setCvvNum(processReq.getCvvNum());
 		clientReq.setExpDate(processReq.getExpDate());
 		clientReq.setNameOnCard(processReq.getNameOnCard());
 	
 		//3
 		CardVerifyServiceClient svcClient = new CardVerifyServiceClientImpl();
-		CardVerifyServiceClientRes clientResp = new CardVerifyServiceClientRes();
+		CardVerifyServiceClientRes clientResp = svcClient.enroll(clientReq);
 		
 		EnrollmentDAORes daoResp = null;
 		
@@ -64,17 +66,14 @@ public class EnrollmentProcessImpl implements EnrollmentProcess{
 		processResp.setRespMsg(daoResp.getRespMsg());
 		processResp.setStatus(daoResp.getStatus());
 		processResp.setDesc(daoResp.getDesc());
-	
+	  
+		System.out.println("Exit from the process layer: "+processReq);
+		
 		return processResp;
 
 
 
 
 }
-
-	public EnrollmentProcessRespBuilder processor(EnrollmentProcessReqBuilder requestProcessor) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

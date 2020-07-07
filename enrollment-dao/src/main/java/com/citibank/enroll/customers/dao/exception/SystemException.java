@@ -20,5 +20,11 @@ public String getRespMsg() {
 	}
 
 
+@Override
+public String toString() {
+	return "SystemException [respCode=" + respCode + ", respMsg=" + respMsg + "]";
+}
+
+
 
 }

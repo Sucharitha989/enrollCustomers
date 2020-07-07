@@ -40,6 +40,12 @@ public class CardVerifyServiceClientRes {
 		this.active = active;
 	}
 
+	@Override
+	public String toString() {
+		return "CardVerifyServiceClientRes [active=" + active + ", respCode=" + respCode + ", respMsg=" + respMsg
+				+ ", status=" + status + "]";
+	}
+
 
 
 }

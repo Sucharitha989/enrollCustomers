@@ -18,6 +18,10 @@ public class BusinessException extends Exception {
 	public void setRespMsg(String respMsg) {
 		this.respMsg = respMsg;
 	}
+	@Override
+	public String toString() {
+		return "BusinessException [respCode=" + respCode + ", respMsg=" + respMsg + "]";
+	}
     
     
     

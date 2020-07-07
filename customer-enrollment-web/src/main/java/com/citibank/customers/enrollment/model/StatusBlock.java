@@ -7,7 +7,6 @@ public class StatusBlock {
 	private String status;
 
 	public String getRespCode() {
-
 		return respCode;
 	}
 
@@ -29,6 +28,11 @@ public class StatusBlock {
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+
+	@Override
+	public String toString() {
+		return "StatusBlock [respCode=" + respCode + ", respMsg=" + respMsg + ", status=" + status + "]";
 	}
 
 }

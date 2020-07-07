@@ -2,7 +2,6 @@ package com.citibank.enroll.customers.model;
 
 import java.util.List;
 
-
 public class CustomerInfo {
 
 	private String cardNum;
@@ -10,20 +9,6 @@ public class CustomerInfo {
 	private String expDate;
 	private String nameOnCard;
 	private List<String> mobileNumber;
-
-	@Override
-	public String toString() {
-		return "CustomerInfo [cardNum=" + cardNum + ", cvvNum=" + cvvNum + ", expDate=" + expDate + ", nameOnCard="
-				+ nameOnCard + ", mobileNumber=" + mobileNumber + "]";
-	}
-
-	public List<String> getMobileNumber() {
-		return mobileNumber;
-	}
-
-	public void setMobileNumber(List<String> mobileNumber) {
-		this.mobileNumber = mobileNumber;
-	}
 
 	public String getCardNum() {
 		return cardNum;
@@ -57,4 +42,17 @@ public class CustomerInfo {
 		this.nameOnCard = nameOnCard;
 	}
 
+	public List<String> getMobileNumber() {
+		return mobileNumber;
+	}
+
+	public void setMobileNumber(List<String> mobileNumber) {
+		this.mobileNumber = mobileNumber;
+	}
+
+	@Override
+	public String toString() {
+		return "CustomerInfo [cardNum=" + cardNum + ", cvvNum=" + cvvNum + ", expDate=" + expDate + ", nameOnCard="
+				+ nameOnCard + ", mobileNumber=" + mobileNumber + "]";
+	}
 }

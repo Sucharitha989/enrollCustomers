@@ -5,6 +5,7 @@ public class EnrollmentProcessReqBuilder {
 	public String eName;
 	public String eId;
 	public String eadd;
+	
 	public String geteName() {
 		return eName;
 	}
@@ -22,6 +23,10 @@ public class EnrollmentProcessReqBuilder {
 	}
 	public void setEadd(String eadd) {
 		this.eadd = eadd;
+	}
+	@Override
+	public String toString() {
+		return "EnrollmentProcessReqBuilder [eName=" + eName + ", eId=" + eId + ", eadd=" + eadd + "]";
 	}
 
 }

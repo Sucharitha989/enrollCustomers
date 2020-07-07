@@ -27,21 +27,21 @@ public class EnrollmentServiceClientImpl implements EnrollmentServiceClient {
 		// 1.prepare the client details
 
 		ClientContext clientContext = new ClientContext();
-		ClientContext.setClientId("citi");
-		ClientContext.setChannelId("mobile");
-		ClientContext.setRequestId(UUID.randomUUID().toString());
+		clientContext.setClientId("ciit");
+		clientContext.setChannelId("mobile");
+		clientContext.setRequestId(UUID.randomUUID().toString());
 		enrollrequest.setClientContext(clientContext);
 
 		// 2.prepare the customer details
 
 		ServiceDetails servicedtls = new ServiceDetails();
 		servicedtls.setServiceName("EnrollmentService");
-		servicedtls.setapiName("enrollment");
+		servicedtls.setApiName("Enrollment");
 		servicedtls.setVersion("0.0.1");
 
 		enrollrequest.setServiceDetails(servicedtls);
 
-		String url = "http://localhost:8080/enrollment-servicewar/rest/v1/enrollment";
+		String url = "http://localhost:2020/enrollment-servicewar/rest/v1/enrollment";
 
 		/*
 		 * String env = System.getProperty("env");
@@ -64,6 +64,7 @@ public class EnrollmentServiceClientImpl implements EnrollmentServiceClient {
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Content-Type", "application/json");
+	
 
 		HttpEntity<EnrollmentServiceReq> request = new HttpEntity<EnrollmentServiceReq>(enrollrequest, headers);
 
@@ -91,6 +92,7 @@ public class EnrollmentServiceClientImpl implements EnrollmentServiceClient {
 		restTemplate.setMessageConverters(messageConverters);
 
 		EnrollmentServiceRes response = restTemplate.postForObject(url, request, EnrollmentServiceRes.class);
+	
  
 		return response;
 	}
@@ -107,11 +109,12 @@ public class EnrollmentServiceClientImpl implements EnrollmentServiceClient {
 		// prepare the customer details
 
 		CustomerInfo customerInfo = new CustomerInfo();
+		
 		customerInfo.setCardNum("232323232322323243");
 		customerInfo.setExpDate("12-2021");
 		customerInfo.setCvvNum("123");
 		customerInfo.setNameOnCard("Sreenu");
-		List<String> mobileNumber = new ArrayList();
+		List<String> mobileNumber = new ArrayList<String>();
 
 		mobileNumber.add("98776555443");
 		mobileNumber.add("87665544434");
@@ -119,14 +122,7 @@ public class EnrollmentServiceClientImpl implements EnrollmentServiceClient {
 		customerInfo.setMobileNumber(mobileNumber);
 
 		request.setCustomerInfo(customerInfo);
-		/*
-		 * ServiceDetails servicedtls = new ServiceDetails();
-		 * servicedtls.setServiceName("EnrollmentService");
-		 * servicedtls.setapiName("enrollment"); servicedtls.setVersion("1.0");
-		 * 
-		 * request1.setServiceDetails(servicedtls);
-		 */
-
+	
 		EnrollmentServiceClient svcClient = new EnrollmentServiceClientImpl();
 
 		EnrollmentServiceRes resp = svcClient.enroll(request);

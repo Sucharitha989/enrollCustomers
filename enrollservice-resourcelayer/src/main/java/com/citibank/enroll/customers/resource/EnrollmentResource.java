@@ -20,6 +20,7 @@ import com.citibank.enroll.customers.model.CustomerInfo;
 import com.citibank.enroll.customers.model.EnrollmentResourceReq;
 import com.citibank.enroll.customers.model.EnrollmentResourceRes;
 import com.citibank.enroll.customers.model.ServiceDetails;
+import com.citibank.enroll.customers.model.StatusBlock;
 import com.citibank.enroll.customers.process.builder.EnrollmentProcess;
 import com.citibank.enroll.customers.process.impl.EnrollmentProcessImpl;
 import com.citibank.enroll.customers.process.model.EnrollmentProcessReq;
@@ -89,7 +90,7 @@ public class EnrollmentResource {
 		
 		 EnrollmentProcess process = new EnrollmentProcessImpl();
 		 
-		 //EnrollmentProcessRes processResp = ((EnrollmentProcessImpl) process).enroll(processReq)(WRONG);
+		// EnrollmentProcessRes processResp = ((EnrollmentProcessImpl) process).enroll(processReq)(WRONG);
 		 
 		 EnrollmentProcessRes processResp = process.enroll(processReq);
 		 
@@ -155,9 +156,9 @@ public static void main (String[] args) throws IOException{
   // prepare the client details
 
 ClientContext clientContext = new ClientContext();
-ClientContext.setClientId("ciit");
-ClientContext.setChannelId("mobile");
-ClientContext.setRequestId(UUID.randomUUID().toString());
+clientContext.setClientId("citi");
+clientContext.setChannelId("mobile");
+clientContext.setRequestId(UUID.randomUUID().toString());
 request.setClientContext(clientContext);
 
   //prepare the customer details 

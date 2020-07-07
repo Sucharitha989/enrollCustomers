@@ -39,6 +39,11 @@ public class EnrollmentDAORes {
 	public void setAck(String ack) {
 		this.ack = ack;
 	}
+	@Override
+	public String toString() {
+		return "EnrollmentDAORes [respCode=" + respCode + ", respMsg=" + respMsg + ", desc=" + desc + ", status="
+				+ status + ", ack=" + ack + "]";
+	}
 	
 	
 

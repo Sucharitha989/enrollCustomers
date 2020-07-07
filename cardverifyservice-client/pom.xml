@@ -3,11 +3,9 @@
   <groupId>com.citibank.enroll.customers</groupId>
   <artifactId>cardverifyservice-client</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <dependencies>
-  <dependency>
-  <groupId>com.citibank.enroll.customers</groupId>
-  <artifactId>enrollment-dao</artifactId>
+  <parent>
+    <groupId>com.citibank.enroll.customers</groupId>
+  <artifactId>citi-parent</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  </dependency>
-  </dependencies>
+  </parent>
 </project>
