@@ -8,5 +8,5 @@ import com.citibank.customers.enrollment.model.EnrollmentServiceRes;
 
 public interface EnrollmentServiceClient {
 
-EnrollmentServiceRes enroll(EnrollmentServiceReq request);
+EnrollmentServiceRes enroll(EnrollmentServiceReq request) throws IOException;
 }

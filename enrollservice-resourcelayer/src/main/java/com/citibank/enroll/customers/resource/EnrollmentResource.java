@@ -150,58 +150,57 @@ public class EnrollmentResource {
 		System.out.println("Exit from Resource Layer : "+ request);
 		return response;
 }
-public static void main (String[] args) throws IOException{
-	EnrollmentResourceReq request = new EnrollmentResourceReq();
 
-  // prepare the client details
-
-ClientContext clientContext = new ClientContext();
-clientContext.setClientId("citi");
-clientContext.setChannelId("mobile");
-clientContext.setRequestId(UUID.randomUUID().toString());
-request.setClientContext(clientContext);
-
-  //prepare the customer details 
-CustomerInfo customerInfo = new CustomerInfo();
-customerInfo.setCardNum("232323232322323243");
-customerInfo.setExpDate("12-2021");
-customerInfo.setCvvNum("123");
-customerInfo.setNameOnCard("Sreenu");
-List<String>mobileNumber = new ArrayList();
-
-
-mobileNumber.add("98776555443");
-mobileNumber.add("87665544434");
-
-customerInfo.setMobileNumber(mobileNumber);
-
-request.setCustomerInfo(customerInfo);
-
-ServiceDetails servicedtls = new ServiceDetails();
-servicedtls.setServiceName("EnrollmentService");
-servicedtls.setApiName("enrollment");
-servicedtls.setVersion("1.0");
-
-request.setServiceDetails(servicedtls);
-
-EnrollmentResource resource = new EnrollmentResource();
-
-EnrollmentResourceRes enrollResp = resource.enroll(request);
-
-
-
-
-
-
-
-
-}
-
-
-}
-
-
-
+	  public static void main (String[] args) throws IOException{
+	  EnrollmentResourceReq request = new EnrollmentResourceReq();
+	  
+	  // prepare the client details
+	  
+	  ClientContext clientContext = new ClientContext();
+	  clientContext.setClientId("citi"); clientContext.setChannelId("mobile");
+	  clientContext.setRequestId(UUID.randomUUID().toString());
+	  request.setClientContext(clientContext);
+	  
+	  //prepare the customer details
+	  CustomerInfo customerInfo = new CustomerInfo(); 
+	  customerInfo.setCardNum("232323232322323243");
+	  customerInfo.setExpDate("12-2021");
+	  customerInfo.setCvvNum("123");
+	  customerInfo.setNameOnCard("Sreenu"); 
+	  List<String>mobileNumber = new ArrayList();
+	  
+	  
+	  mobileNumber.add("98776555443");
+	  mobileNumber.add("87665544434");
+	  
+	  customerInfo.setMobileNumber(mobileNumber);
+	  
+	  request.setCustomerInfo(customerInfo);
+	  
+	  ServiceDetails servicedtls = new ServiceDetails();
+	  servicedtls.setServiceName("EnrollmentService");
+	  servicedtls.setApiName("enrollment"); servicedtls.setVersion("1.0");
+	  
+	  request.setServiceDetails(servicedtls);
+	  
+	  EnrollmentResource resource = new EnrollmentResource();
+	  
+	  EnrollmentResourceRes enrollResp = resource.enroll(request);
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  
+	  }
+	  
+	  
+	  }
+	  
+	  
+	 
 
 
 

@@ -14,22 +14,24 @@ import com.citibank.customers.enrollment.svc.client.EnrollmentServiceClientImpl;
 
 public class CustomerEnrollmentController {
 	
-}
-	/*
+
+	
 	public String enrollment(@ModelAttribute CustomerEnrollmentReq request) {
-		//1.get the request from UI
-		//2.prepare the request for service client
-		
 		try {
+			//1.get the request from UI
+			//2.prepare the request for service client
+			
 			CustomerEnrollmentReq req = new CustomerEnrollmentReq();
+			
 			//3.call the service client and get the response
+			
 			EnrollmentServiceClient svcClient = new EnrollmentServiceClientImpl();
-			//EnrollmentServiceRes response = svcClient.enroll(req);
-			
-		} catch (IOException e) {
-			
-		e.printStackTrace();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		//4.convert service response to web response.
 		return null;
-*/
+
+}
+}	

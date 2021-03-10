@@ -15,11 +15,12 @@ public class EnrollmentResourceRespBuilder {
 		status.setRespCode(processResp.getRespCode());
 		status.setRespMsg(processResp.getRespMsg());
 		status.setStatus(processResp.getStatus());
-
+ 
 		response.setStatus(status);
 
 		response.setEnrollmentDetails(request);
 		return response;
 	}
 
+	
 }

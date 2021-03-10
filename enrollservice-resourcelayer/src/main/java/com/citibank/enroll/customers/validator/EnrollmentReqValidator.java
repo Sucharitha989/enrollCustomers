@@ -7,16 +7,19 @@ public class EnrollmentReqValidator {
 /*@param request
 @throws EnrollmentReqInvalidException*/
 	
-	public void validateRequest(EnrollmentResourceReq request) throws EnrollmentReqInvalidException{
+	public void validateRequest(final EnrollmentResourceReq request) throws EnrollmentReqInvalidException{
 		
 		//TODO: validate the rquest, if the request is valid,nothing returns
 		// if the request is invalid then handle user defined exception and throws the exception
 		
 		if(request==null || request.getClientContext() == null || request.getCustomerInfo() == null){
+			
+			
+			
 			throw new EnrollmentReqInvalidException("enr001","request object is null or empty");
 		}
 		
-		ClientContext clientContext = request.getClientContext();
+		final ClientContext clientContext = request.getClientContext();
 		if(clientContext.getClientId()==null || " ".equals(clientContext.getClientId())){
 			
 			throw new EnrollmentReqInvalidException("enr002","clientId is invalid");

@@ -22,7 +22,7 @@ import com.citibank.customers.enrollment.model.ServiceDetails;
 
 public class EnrollmentServiceClientImpl implements EnrollmentServiceClient {
 
-	public EnrollmentServiceRes enroll(EnrollmentServiceReq enrollrequest) {
+	public EnrollmentServiceRes enroll(EnrollmentServiceReq enrollrequest) throws IOException {
 
 		// 1.prepare the client details
 
@@ -41,14 +41,14 @@ public class EnrollmentServiceClientImpl implements EnrollmentServiceClient {
 
 		enrollrequest.setServiceDetails(servicedtls);
 
-		String url = "http://localhost:2020/enrollment-servicewar/rest/v1/enrollment";
+		String url = "http://localhost:1010/enrollment-servicewar/rest/v1/enrollment";
 
 		/*
 		 * String env = System.getProperty("env");
 		 * 
-		 * System.out.println("environment is : "+env);
+		 * System.out.println("environment is : " + env);
 		 * 
-		 * String filename = "properties\\enroll-service-"+env+".properties";
+		 * String filename = "properties\\enroll-service-" + env + ".properties";
 		 * 
 		 * InputStream input =
 		 * getClass().getClassLoader().getResourceAsStream(filename);
@@ -61,10 +61,8 @@ public class EnrollmentServiceClientImpl implements EnrollmentServiceClient {
 		 * 
 		 * System.out.println(" service url  is : " + url);
 		 */
-
 		HttpHeaders headers = new HttpHeaders();
 		headers.set("Content-Type", "application/json");
-	
 
 		HttpEntity<EnrollmentServiceReq> request = new HttpEntity<EnrollmentServiceReq>(enrollrequest, headers);
 
@@ -92,48 +90,46 @@ public class EnrollmentServiceClientImpl implements EnrollmentServiceClient {
 		restTemplate.setMessageConverters(messageConverters);
 
 		EnrollmentServiceRes response = restTemplate.postForObject(url, request, EnrollmentServiceRes.class);
-	
- 
+
 		return response;
 	}
-
-	public static void main(String[] args) {
-
-		EnrollmentServiceReq request = new EnrollmentServiceReq();
-
-		/*
-		 * System.setProperty("env", "test"); EnrollmentServiceReq request1 = new
-		 * EnrollmentServiceReq();
-		 */
-
-		// prepare the customer details
-
-		CustomerInfo customerInfo = new CustomerInfo();
-		
-		customerInfo.setCardNum("232323232322323243");
-		customerInfo.setExpDate("12-2021");
-		customerInfo.setCvvNum("123");
-		customerInfo.setNameOnCard("Sreenu");
-		List<String> mobileNumber = new ArrayList<String>();
-
-		mobileNumber.add("98776555443");
-		mobileNumber.add("87665544434");
-
-		customerInfo.setMobileNumber(mobileNumber);
-
-		request.setCustomerInfo(customerInfo);
 	
-		EnrollmentServiceClient svcClient = new EnrollmentServiceClientImpl();
-
-		EnrollmentServiceRes resp = svcClient.enroll(request);
-
-		System.out.println("service response is : " + resp);
-
-	}
-
-	public EnrollmentServiceRes enroll(CustomerEnrollmentReq req) throws IOException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	  public static void main(String[] args) throws IOException {
+	  
+	  EnrollmentServiceReq request = new EnrollmentServiceReq();
+	  
+	  
+	  //System.setProperty("env", "test");
+	  
+	  EnrollmentServiceReq request1 = new EnrollmentServiceReq();
+	  
+	  
+	  // prepare the customer details
+	  
+	  CustomerInfo customerInfo = new CustomerInfo();
+	  
+	  customerInfo.setCardNum("232323232322323243");
+	  customerInfo.setExpDate("12-2021"); 
+	  customerInfo.setCvvNum("123");
+	  customerInfo.setNameOnCard("Sreenu"); 
+	  List<String> mobileNumber = new ArrayList<String>();
+	  
+	  mobileNumber.add("98776555443"); 
+	  mobileNumber.add("87665544434");
+	  
+	  customerInfo.setMobileNumber(mobileNumber);
+	  
+	  request.setCustomerInfo(customerInfo);
+	  
+	  EnrollmentServiceClient svcClient = new EnrollmentServiceClientImpl();
+	  
+	  EnrollmentServiceRes resp = svcClient.enroll(request);
+	  System.out.println("service response is : " + resp); 
+	  }
+	  
+	  public EnrollmentServiceRes enroll(CustomerEnrollmentReq req) throws  IOException {
+		return null; 
+		   }
+	 
 }
+

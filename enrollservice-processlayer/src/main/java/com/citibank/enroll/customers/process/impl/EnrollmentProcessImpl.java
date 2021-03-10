@@ -47,7 +47,7 @@ public class EnrollmentProcessImpl implements EnrollmentProcess{
 			
 			daoReq.setClientId(processReq.getClientId());
 			daoReq.setChannelId(processReq.getChannelId());
-			daoReq.setCvvNum(processReq.getCardNum());
+			daoReq.setCardNum(processReq.getCardNum());
 			daoReq.setCvvNum(processReq.getCvvNum());
 			daoReq.setExpDate(processReq.getExpDate());
 			daoReq.setNameOnCard(processReq.getNameOnCard());
